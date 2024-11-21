@@ -1,0 +1,5 @@
+package org.jsp.marchentproduct.dao;
+
+public class MarchentDao {
+
+}

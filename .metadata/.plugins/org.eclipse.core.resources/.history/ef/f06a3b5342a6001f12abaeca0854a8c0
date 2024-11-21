@@ -1,0 +1,14 @@
+package org.jsp.marchentproduct.controller;
+
+import javax.persistence.*;
+
+public class MarchentProductController {
+
+	public static void main(String[] args) {
+		EntityManagerFactory fac = Persistence.createEntityManagerFactory("dev");
+//		EntityManager man = fac.createEntityManager();
+		System.out.println(fac);
+		
+	}
+
+}

@@ -1,0 +1,5 @@
+package org.jsp.marchentproduct.dto;
+
+public class Product {
+
+}

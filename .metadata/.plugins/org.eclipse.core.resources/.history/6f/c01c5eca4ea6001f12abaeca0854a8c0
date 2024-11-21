@@ -1,0 +1,111 @@
+package org.jsp.marchentproduct.controller;
+import java.util.*;
+import javax.persistence.*;
+
+import org.jsp.marchentproduct.dao.MarchentDao;
+import org.jsp.marchentproduct.dto.Marchent;
+
+public class MarchentProductController {
+	static Scanner sc = new Scanner(System.in);
+	static MarchentDao mdao = new MarchentDao();
+	
+	public static void main(String[] args) {
+		System.out.println("1. Save Marchent");
+		System.out.println("2. Update Marchent");
+		System.out.println("3. Find Marchent by id");
+		System.out.println("4. Verify Marchent by Email and Password");
+		System.out.println("5. Verify Marchent by Phone and password");
+		System.out.println("6. Add Product");
+		System.out.println("7. Update Product");
+		System.out.println("8. Find Products by Marchent_id");
+		System.out.println("9. Find Products by brand");
+		System.out.println("10. Find Products by Category");
+		
+		System.out.println("Enter your choice: ");
+		int choice = sc.nextInt();
+		switch (choice) {
+		case 1:
+			saveMarchent();			
+			break;
+		
+		case 2:
+			updateMarchent();			
+			break;
+		default:
+			break;
+		}
+		
+		
+		
+	}
+
+
+	private static void saveMarchent() {
+		System.out.println("Enter the Marchent Info to Save: name , phone , gst_number , Email , Password");
+		String name = sc.next();
+		long phone = sc.nextLong();
+		String gst_number = sc.next();
+		String email = sc.next();
+		String password = sc.next();
+		
+		Marchent m = new Marchent();
+		m.setName(name);
+		m.setPhone(phone);
+		m.setGst_number(gst_number);
+		m.setEmail(email);
+		m.setPassword(password);
+		Marchent mdb = mdao.saveMarchent(m);
+		System.out.println("Marchent is saved with an id: " + mdb.getId());
+	}
+	
+	private static void updateMarchent() {
+		System.out.println("Enter the Marchent id");
+		System.out.println("Enter Marchent name , phone , gst_numer , email , password");
+		Marchent m = new Marchent();
+		m.setId(sc.nextInt());
+		m.setName(sc.next());
+		m.setPhone(sc.nextLong());
+		m.setGst_number(sc.next());
+		m.setEmail(sc.next());
+		m.setPassword(sc.next());
+		mdao.updateMarchent(m);
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;OneToOneUni_Proj/src/main/resources/META-INF/hibernate.cfg.xml&apos; to &apos;Persistence.xml&apos;" description="Rename resource &apos;hibernate.cfg.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/META-INF/hibernate.cfg.xml" name="Persistence.xml" stamp="1729999889786" updateReferences="true"/>
+</session>

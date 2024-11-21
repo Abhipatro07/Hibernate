@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<hibernate-mapping>
+	<class name = "org.jsp.hibernateproj.Employee" table = "Employee">
+		<id name = "id" column="id">
+			<generator class="identity" />
+		</id>
+		<property name="name" column="name" not-null="true" />
+		<property name="email" column="email" not-null="true" unique="true"/>
+		<property name="phone" column="phone" not-null="true" unique="true"/>
+		<property name="password" column="password" not-null="true" />
+		<property name="desg" column="desg" not-null="true" unique="true"/>
+		<property name="salary" column="salary" not-null="true" />
+	</class>
+</hibernate-mapping>

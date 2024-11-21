@@ -1,0 +1,65 @@
+package org.jsp.marchentproduct.dao;
+import java.util.List;
+
+import javax.persistence.*;
+import org.jsp.marchentproduct.dto.Marchent;
+import org.jsp.marchentproduct.dto.Product;
+
+public class ProductDao {
+	EntityManagerFactory fac = Persistence.createEntityManagerFactory("dev");
+	EntityManager man = fac.createEntityManager();
+	
+	
+	public Product addProduct(int mid, Product p) {
+		EntityTransaction tran = man.getTransaction();
+		tran.begin();
+		Marchent mdb = man.find(Marchent.class, mid);
+		if(mdb != null) {
+			mdb.getProducts().add(p);
+			p.setMarchent(mdb);
+			man.persist(p);
+			tran.commit();
+			return p;
+		}
+		else {
+			return null;
+		}
+	}
+
+
+	public List<Product> findProductsByMarchentId(int mid) {
+		Query q = man.createQuery("select m.products from Marchent m where m.id = ?1");
+		q.setParameter(1, mid);
+		List<Product> lp = q.getResultList();
+		return lp;		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

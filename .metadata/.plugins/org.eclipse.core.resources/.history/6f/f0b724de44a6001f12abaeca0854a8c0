@@ -1,0 +1,28 @@
+package org.jsp.marchentproduct.controller;
+import java.util.Scanner;
+
+import javax.persistence.*;
+
+public class MarchentProductController {
+	static Scanner sc = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		System.out.println("1. Save Marchent");
+		System.out.println("2. Update Marchent");
+		System.out.println("3. Find Marchent by id");
+		System.out.println("4. Verify Marchent by Email and Password");
+		System.out.println("5. Verify Marchent by Phone and password");
+		System.out.println("6. Add Product");
+		System.out.println("7. Update Product");
+		System.out.println("8. Find Products by Marchent_id");
+		System.out.println("9. Find Products by brand");
+		System.out.println("10. Find Products by Category");
+		
+		System.out.println("Enter your choice: ");
+		int choice = sc.nextInt();
+		
+		
+		
+	}
+
+}
